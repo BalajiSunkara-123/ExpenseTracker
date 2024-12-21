@@ -17,47 +17,42 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: 'Lato', sans-serif;
-  font-size: 16px; /* Reduced for better fit on mobile */
+  font-size: 18px;
 }
 
 .container {
-  margin: 20px auto;
-  width: 90%; /* Adjusted for smaller screens */
-  max-width: 400px;
+  margin: 30px auto;
+  width: 400px;
 }
 
 h1 {
   letter-spacing: 1px;
   margin: 0;
-  font-size: 24px; /* Slightly smaller for mobile */
 }
 
 h3 {
   border-bottom: 1px solid #bbb;
   padding-bottom: 10px;
-  margin: 30px 0 10px;
+  margin: 40px 0 10px;
 }
 
 h4 {
   margin: 0;
   text-transform: uppercase;
-  font-size: 16px; /* Adjusted for readability on mobile */
 }
 
 .inc-exp-container {
   background-color: #fff;
   box-shadow: var(--box-shadow);
-  padding: 15px; /* Reduced padding for smaller screens */
+  padding: 20px;
   display: flex;
   justify-content: space-between;
-  margin: 15px 0;
-  flex-wrap: wrap; /* Wrap content for smaller screens */
+  margin: 20px 0;
 }
 
 .inc-exp-container > div {
-  flex: 1 1 50%; /* Adjusted width for smaller screens */
+  flex: 1;
   text-align: center;
-  padding: 10px; /* Added padding for spacing */
 }
 
 .inc-exp-container > div:first-of-type {
@@ -65,7 +60,7 @@ h4 {
 }
 
 .money {
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: 1px;
   margin: 5px 0;
 }
@@ -88,8 +83,8 @@ input[type='number'] {
   border: 1px solid #dedede;
   border-radius: 2px;
   display: block;
-  font-size: 14px; /* Reduced font size for mobile */
-  padding: 8px; /* Adjusted padding for smaller inputs */
+  font-size: 16px;
+  padding: 10px;
   width: 100%;
 }
 
@@ -100,8 +95,8 @@ input[type='number'] {
   color: #fff;
   border: 0;
   display: block;
-  font-size: 14px; /* Adjusted font size for buttons */
-  margin: 10px 0 20px;
+  font-size: 16px;
+  margin: 10px 0 30px;
   padding: 10px;
   width: 100%;
 }
@@ -114,7 +109,7 @@ input[type='number'] {
 .list {
   list-style-type: none;
   padding: 0;
-  margin-bottom: 30px; /* Reduced margin for better fit */
+  margin-bottom: 40px;
 }
 
 .list li {
@@ -126,7 +121,6 @@ input[type='number'] {
   position: relative;
   padding: 10px;
   margin: 10px 0;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .list li.plus {
@@ -142,7 +136,7 @@ input[type='number'] {
   background-color: #e74c3c;
   border: 0;
   color: #fff;
-  font-size: 16px; /* Reduced size for better fit */
+  font-size: 20px;
   line-height: 20px;
   padding: 2px 5px;
   position: absolute;
@@ -157,19 +151,73 @@ input[type='number'] {
   opacity: 1;
 }
 
-/* Mobile-Specific Adjustments */
+/* Mobile-Friendly Adjustments */
 @media (max-width: 768px) {
-  body {
-    font-size: 14px;
+  .container {
+    width: 90%; /* Increase width on mobile */
+    margin: 10px auto;
+  }
+
+  h1 {
+    font-size: 28px; /* Smaller font size on mobile */
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin: 20px 0 5px;
+  }
+
+  .inc-exp-container {
+    flex-direction: column;
+    margin: 10px 0;
+    padding: 15px;
   }
 
   .inc-exp-container > div {
-    flex: 1 1 100%; /* Each section takes full width */
-    border-right: none; /* Remove border for stacked layout */
-    border-bottom: 1px solid #dedede; /* Add border below for separation */
+    margin-bottom: 10px;
+    text-align: center;
   }
 
-  .inc-exp-container > div:last-of-type {
-    border-bottom: none; /* Remove border for last section */
+  .inc-exp-container > div:first-of-type {
+    border-right: none;
+  }
+
+  .money {
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input[type='text'],
+  input[type='number'] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .list li {
+    font-size: 16px;
+    padding: 12px;
+    margin: 10px 0;
+  }
+
+  .list li.plus {
+    border-right: 5px solid #2ecc71;
+  }
+
+  .list li.minus {
+    border-right: 5px solid #c0392b;
+  }
+
+  .delete-btn {
+    padding: 3px 7px;
+    font-size: 18px;
   }
 }
