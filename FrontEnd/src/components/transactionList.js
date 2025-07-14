@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { sendUrl, GlobalContext } from '../context/globalState';
+import React, { useContext } from 'react';
+import { GlobalContext } from '../context/globalState';
 import Transaction from './transaction';
 
 function TransactionList() {

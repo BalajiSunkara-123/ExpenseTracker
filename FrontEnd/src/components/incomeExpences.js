@@ -22,7 +22,7 @@ function IncomeExpences() {
     var plus = 0;
     var minus = 0;
     for (const tran of transactions) {
-      if (tran.type == '+') {
+      if (tran.type === '+') {
         plus = plus + tran.Amount;
       } else {
         minus = minus + tran.Amount;

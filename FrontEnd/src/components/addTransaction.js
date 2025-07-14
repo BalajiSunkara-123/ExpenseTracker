@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { sendUrl, GlobalContext } from '../context/globalState';
+import { GlobalContext } from '../context/globalState';
 // someChange
 const AddTransaction = () => {
   const { addTransaction } = useContext(GlobalContext);
   const [text, setText] = useState('');
   const [amount, setAmount] = useState(0);
   const [category, setCategory] = useState(null);
-  const [email, setEmail] = useState(null);
+  // const [email, setEmail] = useState(null);
 
   const onSubmit = async (e) => {
     e.preventDefault();

@@ -10,7 +10,7 @@ function Balance() {
     var amount = 0;
 
     for (const tran of transactions) {
-      if (tran.type == '+') {
+      if (tran.type === '+') {
         amount = amount + tran.Amount;
       } else {
         amount = amount - tran.Amount;
