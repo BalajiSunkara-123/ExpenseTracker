@@ -14,8 +14,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d build -r https://github.com/BalajiSunkara-123/ExpenseTracker.git"
-
+    "deploy": "gh-pages -d build -r https://github.com/BalajiSunkara-123/ExpenseTracker.git"
   },
   "eslintConfig": {
     "extends": [
@@ -36,10 +35,10 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.2.0"
+    "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.2.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
   },
   "homepage": "https://BalajiSunkara-123.github.io/ExpenseTracker"
-
-  
 }
-
