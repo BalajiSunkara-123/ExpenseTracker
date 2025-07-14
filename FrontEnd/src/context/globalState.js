@@ -51,7 +51,7 @@
 
 import React, { createContext, useEffect, useState } from 'react';
 // const sendUrl = 'http://localhost:3000';
-const sendUrl = 'https://expensetracker-1-0cp1.onrender.com';
+const sendUrl = 'https://expensetracker-axic.onrender.com';
 export const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
   const [transactions, setTransactions] = useState([]);
