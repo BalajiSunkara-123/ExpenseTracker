@@ -64,7 +64,13 @@ function Login() {
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         &nbsp;
         <span>
-          <a onClick={navigate('/register')}>New User?</a>
+          <a
+            onClick={() => {
+              navigate('/register');
+            }}
+          >
+            New User?
+          </a>
         </span>
         &nbsp; &nbsp;
         <span>
