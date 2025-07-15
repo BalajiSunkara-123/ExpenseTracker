@@ -3,9 +3,11 @@ const transaction = require('../models/transaction');
 const createTransaction = async (req, res) => {
   try {
     const { text, amount, category } = req.body;
+    const user = req.user;
+
     // console.log(text, amount, category);
     const newTransaction = await transaction.create({
-      email: 'Balaji@tp.in',
+      email: user.email,
       text: text,
       category: category,
       Amount: amount < 0 ? -amount : amount,
@@ -28,9 +30,10 @@ const createTransaction = async (req, res) => {
 
 const getAllTransactions = async (req, res) => {
   try {
-    const email = req.params.email;
+    const user = req.user;
 
-    const data = await transaction.find({ email: email });
+    console.log(user);
+    const data = await transaction.find({ email: user.email });
     res.status(200).json({
       success: true,
       message: 'Got All Transactions',

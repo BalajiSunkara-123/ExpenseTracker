@@ -6,11 +6,13 @@ const dotenv = require('dotenv').config();
 const database = require('./db/db');
 
 const transactionRouter = require('./routes/transactionRoutes');
+const authRouter = require('./routes/authRoutes');
 
 app.use(express.json());
 app.use(cors());
 
 app.use('/api/transactions', transactionRouter);
+app.use('/api/auth/', authRouter);
 
 database();
 

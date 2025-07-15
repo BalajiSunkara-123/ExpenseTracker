@@ -12,6 +12,7 @@ const AddTransaction = () => {
     e.preventDefault();
     const newTransaction = {
       // id: Math.floor(Math.random() * 1000000),
+      // email: localStorage.getItem('email'),
       text: text,
       amount: +amount,
       category: category,

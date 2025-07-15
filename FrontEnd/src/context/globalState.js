@@ -50,8 +50,8 @@
 // };
 
 import React, { createContext, useEffect, useState } from 'react';
-// const sendUrl = 'http://localhost:3000';
-const sendUrl = 'https://expensetracker-axic.onrender.com';
+export const sendUrl = 'http://localhost:3000';
+// export const sendUrl = 'https://expensetracker-axic.onrender.com';
 export const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
   const [transactions, setTransactions] = useState([]);
@@ -60,9 +60,11 @@ export const GlobalProvider = ({ children }) => {
   }, []);
 
   const handleGetTransactions = async () => {
-    const response = await fetch(
-      sendUrl + '/api/transactions/getall/' + 'Balaji@tp.in',
-    );
+    const response = await fetch(sendUrl + '/api/transactions/getall', {
+      headers: {
+        Authorization: localStorage.getItem('authToken'),
+      },
+    });
     const result = await response.json();
     setTransactions(result.transactions);
   };
@@ -72,6 +74,7 @@ export const GlobalProvider = ({ children }) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('authToken'),
       },
       body: JSON.stringify(transaction),
     });
@@ -83,6 +86,9 @@ export const GlobalProvider = ({ children }) => {
   const deleteTransaction = async (id) => {
     const response = await fetch(sendUrl + '/api/transactions/delete/' + id, {
       method: 'DELETE',
+      headers: {
+        Authorization: localStorage.getItem('authToken'),
+      },
     });
     const result = await response.json();
     alert(result.message);
