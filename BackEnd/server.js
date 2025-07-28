@@ -15,9 +15,10 @@ app.use('/api/transactions', transactionRouter);
 app.use('/api/auth/', authRouter);
 
 database();
-app.use('/', () => {
-  'Hello welcome to Expense Tracker Back End';
+app.get('/', (req, res) => {
+  res.send('Hello, welcome to Expense Tracker Back End');
 });
+
 PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is Running at PORT ${PORT}`);
