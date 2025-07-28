@@ -60,13 +60,17 @@ export const GlobalProvider = ({ children }) => {
   }, []);
 
   const handleGetTransactions = async () => {
-    const response = await fetch(sendUrl + '/api/transactions/getall', {
-      headers: {
-        Authorization: localStorage.getItem('authToken'),
-      },
-    });
-    const result = await response.json();
-    setTransactions(result.transactions);
+    try {
+      const response = await fetch(sendUrl + '/api/transactions/getall', {
+        headers: {
+          Authorization: localStorage.getItem('authToken'),
+        },
+      });
+      const result = await response.json();
+      setTransactions(result.transactions);
+    } catch (e) {
+      alert(e);
+    }
   };
 
   const addTransaction = async (transaction) => {
