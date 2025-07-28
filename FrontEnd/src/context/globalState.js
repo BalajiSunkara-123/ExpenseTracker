@@ -66,6 +66,12 @@ export const GlobalProvider = ({ children }) => {
           Authorization: localStorage.getItem('authToken'),
         },
       });
+      if (response.status === 401) {
+        localStorage.removeItem('authToken');
+        alert('Session expired. Please log in again.');
+        window.location.href = '/login'; // ✅ Redirect to login
+        return;
+      }
       const result = await response.json();
       setTransactions(result.transactions);
     } catch (e) {
@@ -82,6 +88,12 @@ export const GlobalProvider = ({ children }) => {
       },
       body: JSON.stringify(transaction),
     });
+    if (response.status === 401) {
+      localStorage.removeItem('authToken');
+      alert('Session expired. Please log in again.');
+      window.location.href = '/login'; // ✅ Redirect to login
+      return;
+    }
     const result = await response.json();
     alert(result.message);
     handleGetTransactions();
@@ -94,6 +106,12 @@ export const GlobalProvider = ({ children }) => {
         Authorization: localStorage.getItem('authToken'),
       },
     });
+    if (response.status === 401) {
+      localStorage.removeItem('authToken');
+      alert('Session expired. Please log in again.');
+      window.location.href = '/login'; // ✅ Redirect to login
+      return;
+    }
     const result = await response.json();
     alert(result.message);
     handleGetTransactions();
