@@ -54,9 +54,13 @@ import React, { createContext, useEffect, useState } from 'react';
 export const sendUrl = 'https://expensetracker-axic.onrender.com';
 export const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
+  const token = localStorage.getItem('authToken');
   const [transactions, setTransactions] = useState([]);
   useEffect(() => {
-    handleGetTransactions();
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      handleGetTransactions();
+    }
   }, []);
 
   const handleGetTransactions = async () => {
