@@ -69,7 +69,7 @@ export const GlobalProvider = ({ children }) => {
       if (response.status === 401) {
         localStorage.removeItem('authToken');
         alert('Session expired. Please log in again.');
-        window.location.href = '/login'; // ✅ Redirect to login
+        // window.location.href = '/login'; // ✅ Redirect to login
         return;
       }
       const result = await response.json();
@@ -91,7 +91,7 @@ export const GlobalProvider = ({ children }) => {
     if (response.status === 401) {
       localStorage.removeItem('authToken');
       alert('Session expired. Please log in again.');
-      window.location.href = '/login'; // ✅ Redirect to login
+      // window.location.href = '/login'; // ✅ Redirect to login
       return;
     }
     const result = await response.json();
