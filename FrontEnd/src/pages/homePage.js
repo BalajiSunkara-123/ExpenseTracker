@@ -5,6 +5,7 @@ import Balance from '../components/balance';
 import IncomeExpences from '../components/incomeExpences';
 import AddTransaction from '../components/addTransaction';
 import TransactionList from '../components/transactionList';
+import Dashboard from '../components/dashboard';
 function HomePage() {
   return (
     <>
@@ -12,6 +13,8 @@ function HomePage() {
       <div className="container">
         <Balance />
         <IncomeExpences />
+        <Dashboard />
+        <h3>Transaction Management</h3>
         <AddTransaction />
         <TransactionList />
       </div>
