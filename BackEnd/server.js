@@ -16,7 +16,7 @@ app.use('/api/auth/', authRouter);
 
 database();
 app.get('/', (req, res) => {
-  res.send('Hello, welcome to Expense Tracker Back End');
+  res.send('Hello, welcome to Expense Tracker Back End !');
 });
 
 PORT = process.env.PORT || 3000;
