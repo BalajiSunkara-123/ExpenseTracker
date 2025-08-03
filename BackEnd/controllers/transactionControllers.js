@@ -2,7 +2,7 @@ const transaction = require('../models/transaction');
 
 const createTransaction = async (req, res) => {
   try {
-    const { text, amount, category } = req.body;
+    const { text, amount, category, transactionType } = req.body;
     const user = req.user;
 
     // console.log(text, amount, category);
@@ -12,6 +12,7 @@ const createTransaction = async (req, res) => {
       category: category,
       Amount: amount < 0 ? -amount : amount,
       type: amount < 0 ? '-' : '+',
+      transactionType: transactionType,
     });
     if (newTransaction) {
       res.status(200).json({

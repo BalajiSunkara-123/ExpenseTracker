@@ -43,7 +43,8 @@ function Dashboard() {
   transactions.forEach((txn) => {
     if (txn.type === '-') {
       const date = new Date(txn.time).toLocaleDateString();
-      const amount = txn.Amount;
+      const amount = Number(txn.Amount);
+      if (isNaN(amount)) return;
       timeMap[date] = (timeMap[date] || 0) + amount;
     }
   });
@@ -51,6 +52,10 @@ function Dashboard() {
     date,
     amount,
   }));
+  console.log(timeMap);
+
+  console.log(timeData);
+
   const COLORS = [
     '#0088FE', // Blue
     '#00C49F', // Teal

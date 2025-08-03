@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { GlobalContext } from '../context/globalState';
+// import transaction from '../../../BackEnd/models/transaction';
 // someChange
 const AddTransaction = () => {
   const { addTransaction } = useContext(GlobalContext);
   const [text, setText] = useState('');
   const [amount, setAmount] = useState(0);
   const [category, setCategory] = useState(null);
+  const [transactionType, setTransactionType] = useState(null);
   // const [email, setEmail] = useState(null);
 
   const onSubmit = async (e) => {
@@ -16,6 +18,7 @@ const AddTransaction = () => {
       text: text,
       amount: +amount,
       category: category,
+      transactionType: transactionType,
     };
     addTransaction(newTransaction);
   };
@@ -56,6 +59,18 @@ const AddTransaction = () => {
             <option value="Laundry">Laundry</option>
             <option value="Subscriptions">Subscriptions</option>
             <option value="Others">Others</option>
+          </select>
+        </div>
+        {/* TransactionType */}
+        <div className="form-control">
+          <label htmlFor="text">Transaction Type</label>
+          <select
+            value={transactionType}
+            onChange={(e) => setTransactionType(e.target.value)}
+            placeholder="Choose Category.."
+          >
+            <option value="Cash">Cash</option>
+            <option value="Online">UPI/Online Banking etc..</option>
           </select>
         </div>
         {/* Amount feild */}

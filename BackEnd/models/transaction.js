@@ -44,7 +44,11 @@ const transactionSchema = mongoose.Schema({
   },
   time: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
+  },
+  transactionType: {
+    type: String,
+    enum: ['Cash', 'Online'],
   },
 });
 

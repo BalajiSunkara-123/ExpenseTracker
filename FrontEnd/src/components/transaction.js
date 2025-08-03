@@ -15,6 +15,8 @@ function Transaction({ transaction }) {
       </span>
       <div>
         <p class="time">{formattedTime}</p>
+        <br />
+        <p class="time">{transaction.transactionType}</p>
       </div>
       <button
         className="delete-btn"
